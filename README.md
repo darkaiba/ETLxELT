@@ -1,58 +1,37 @@
-Porque Polars?
+Why Polars?
 
-Desempenho
-Polars foi desenvolvido com o foco em desempenho e eficiência, utilizando processamento paralelo e operações vetorizadas.
-Polars utiliza um modelo baseado em DataFrame Arrow (Apache Arrow), que oferece melhor desempenho devido a sua estrutura de dados otimizada para operações vetorizadas e em memória.
+Performance Polars was developed with a focus on performance and efficiency, using parallel processing and vectorized operations. Polars uses an Arrow DataFrame (Apache Arrow) based model, which offers better performance due to its data structure optimized for vectorized and in-memory operations.
 
-Uso de Memória
-Polars é altamente eficiente em termos de uso de memória, utilizando menos memória para armazenar dados, especialmente ao trabalhar com grandes volumes de dados.
+Memory Usage Polars is highly efficient in terms of memory usage, using less memory to store data, especially when working with large volumes of data.
 
-API "Lazy"
-Polars suporta uma API Lazy, o que significa que você pode criar um pipeline de transformações sem realmente executar até que um resultado final seja solicitado.
-O modo lazy no Polars permite que você crie um plano de execução e, em vez de calcular de imediato, o Polars vai otimizar a sequência de transformações e fazer os cálculos de forma mais eficiente.
+"Lazy" API Polars supports a Lazy API, which means you can create a pipeline of transformations without actually executing them until a final result is requested. Lazy mode in Polars allows you to create an execution plan and, instead of calculating on the fly, Polars will optimize the sequence of transformations and perform the calculations more efficiently.
 
- Paralelismo nativo
-Polars foi projetado desde o início para aproveitar o paralelismo e a executação distribuída, o que o torna muito mais eficiente para executar operações em múltiplos núcleos.
+Native Parallelism Polars was designed from the ground up to take advantage of parallelism and distributed execution, which makes it much more efficient to execute operations on multiple cores.
 
-API Consistente e Concisa
-Polars tem uma API mais consistente, especialmente se comparado à evolução do Pandas, que introduziu mudanças ao longo do tempo. A API do Polars é mais próxima de uma abordagem funcional.
+Consistent and Concise API Polars has a more consistent API, especially when compared to the evolution of Pandas, which has introduced changes over time. Polars' API is closer to a functional approach.
 
-Facilidade com Tipos de Dados Complexos
-Polars possui suporte nativo para tipos de dados como Listas e Strings, tornando mais fácil lidar com tipos de dados mais complexos e hierárquicos.
+Ease of Complex Data Types Polars has native support for data types such as Lists and Strings, making it easier to deal with more complex and hierarchical data types.
 
-Compatibilidade com o Apache Arrow
-O Polars utiliza a Apache Arrow como seu formato de dados em memória. Isso facilita a integração com outras ferramentas que também utilizam o Arrow, como sistemas de armazenamento distribuído e Big Data.
+Compatibility with Apache Arrow Polars uses Apache Arrow as its in-memory data format. This makes it easier to integrate with other tools that also use Arrow, such as distributed storage systems and Big Data.
 
-Integração com outras ferramentas
-O Polars tem uma integração mais simples e direta com PyArrow e outras tecnologias baseadas no Arrow.
+Integration with other tools Polars has simpler and more direct integration with PyArrow and other Arrow-based technologies.
 
-Conclusão:
-Polars é ideal para quando você lida com grandes volumes de dados, precisa de alta performance, uso eficiente de memória, e deseja execução paralela.
+Conclusion: Polars is ideal for when you deal with large volumes of data, need high performance, efficient use of memory, and want parallel execution.
 
-========================================================================================================================================================
-ETL com Polars
-O processo de ETL (Extract, Transform, Load) pode ser feito em 3 etapas: extrair os dados do CSV, transformá-los e depois carregá-los para o AWS.
+================================================================================================================================================================== ETL with Polars 
+The ETL (Extract, Transform, Load) process can be done in 3 steps: extract the data from the CSV, transform it and then load it to AWS.
 
-Etapa 1: Extrair os dados com Polars
-Primeiro, vamos ler o arquivo CSV usando a biblioteca Polars.
+Step 1: Extract the data with Polars First, let's read the CSV file using the Polars library.
 
-Etapa 2: Transformar os dados
-Agora, vamos aplicar algumas transformações no dataframe.
+Step 2: Transform the data Now, let's apply some transformations to the dataframe.
 
-Etapa 3: Carregar os dados para o AWS (S3)
-Agora, vamos carregar os dados para o Amazon S3, usando o boto3, que é a biblioteca oficial da AWS para interagir com seus serviços.
+Step 3: Load the data to AWS (S3) Now, let's load the data to Amazon S3, using boto3, which is the official AWS library to interact with its services.
 
-Resumo do Processo:
-Criamos uma base de dados fictícia em CSV.
-Usamos Polars para realizar transformações no dataframe, como calcular a idade a partir da data de nascimento.
-Carregamos os dados transformados para o AWS S3.
+Process Summary: We created a fictitious database in CSV. We use Polars to perform transformations on the dataframe, such as calculating age from date of birth. We upload the transformed data to AWS S3.
 
-========================================================================================================================================================
-ELT com Polars
-Etapa 1: Carregar os dados no AWS Athena.
+====================================================================================================================================================================ELT with Polars 
+Step 1: Load the data into AWS Athena.
 
-Etapa 2: Transformar os dados com Polars
-Agora que temos os dados no Athena, o próximo passo é realizar o Transform usando o Polars. Vamos conectar ao Athena e ler os dados usando boto3 e PyAthena.
+Step 2: Transform the data with Polars Now that we have the data in Athena, the next step is to perform Transform using Polars. Let's connect to Athena and read the data using boto3 and PyAthena.
 
-Etapa 3: Carregar os dados transformados para o S3 (Data Warehouse)
-Agora que os dados estão transformados, podemos fazer o Load novamente para o S3 como um novo arquivo CSV, que será usado como um data warehouse.
+Step 3: Load the transformed data to S3 (Data Warehouse) Now that the data is transformed, we can load it back to S3 as a new CSV file, which will be used as a data warehouse.
